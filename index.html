@@ -388,13 +388,13 @@
       position: fixed;
       left: -99999px;
       top: 0;
-      width: 1280px;
+      width: 860px;
       background: #f7f9fd;
       padding: 18px;
     }
 
     .export-sheet {
-      width: 1244px;
+      width: 820px;
       background: #fff;
       border: 2px solid #1f2937;
       border-radius: 18px;
@@ -713,117 +713,147 @@
       object-fit: contain;
     }
 
-    .export-sheet.mobile-export {
-      width: 720px;
+
+
+    /* 统一导出布局：手机和电脑保持一致 */
+    .export-sheet.unified-export {
+      width: 820px;
       padding: 12px;
       border-radius: 18px;
     }
 
-    .export-sheet.mobile-export .export-head {
+    .export-sheet.unified-export .export-head {
       gap: 8px;
       margin-bottom: 8px;
       padding-bottom: 6px;
-      align-items: flex-start;
+      align-items: center;
     }
 
-    .export-sheet.mobile-export .export-head h2 {
+    .export-sheet.unified-export .export-head h2 {
       font-size: 30px;
-      line-height: 1.08;
+      line-height: 1.06;
     }
 
-    .export-sheet.mobile-export .export-head p,
-    .export-sheet.mobile-export .export-time {
+    .export-sheet.unified-export .export-time,
+    .export-sheet.unified-export .export-head p {
       font-size: 14px;
     }
 
-    .export-sheet.mobile-export .export-note {
-      font-size: 17px;
-      line-height: 1.4;
+    .export-sheet.unified-export .export-note {
+      font-size: 15px;
+      line-height: 1.38;
       padding: 8px 10px;
       margin-bottom: 8px;
     }
 
-    .export-sheet.mobile-export .export-grid {
+    .export-sheet.unified-export .export-grid {
+      grid-template-columns: 1fr 1fr !important;
       gap: 6px;
     }
 
-    .export-sheet.mobile-export .export-block {
+    .export-sheet.unified-export .export-block {
       padding: 7px;
+      border-radius: 14px;
     }
 
-    .export-sheet.mobile-export .export-block h3 {
-      font-size: 18px;
+    .export-sheet.unified-export .export-block.full {
+      grid-column: 1 / -1;
+    }
+
+    .export-sheet.unified-export .export-block h3 {
+      font-size: 17px;
       margin-bottom: 5px;
     }
 
-    .export-sheet.mobile-export .kv-2,
-    .export-sheet.mobile-export .kv-3 {
-      grid-template-columns: 1fr;
+    .export-sheet.unified-export .kv-2 {
+      grid-template-columns: repeat(2, minmax(0,1fr)) !important;
       gap: 5px;
     }
 
-    .export-sheet.mobile-export .kv {
-      padding: 7px 8px;
+    .export-sheet.unified-export .kv-3 {
+      grid-template-columns: repeat(3, minmax(0,1fr)) !important;
+      gap: 5px;
     }
 
-    .export-sheet.mobile-export .kv-label {
+    .export-sheet.unified-export .kv {
+      min-height: 0;
+      padding: 7px 8px;
+      border-radius: 10px;
+    }
+
+    .export-sheet.unified-export .kv-label {
       font-size: 12px;
       margin-bottom: 3px;
     }
 
-    .export-sheet.mobile-export .kv-value {
-      font-size: 22px;
+    .export-sheet.unified-export .kv-value {
+      font-size: 19px;
       line-height: 1.18;
     }
 
-    .export-sheet.mobile-export .status-line,
-    .export-sheet.mobile-export .status-line.compact-3 {
-      grid-template-columns: 1fr 1fr;
+    .export-sheet.unified-export .status-line {
+      grid-template-columns: repeat(2, minmax(0,1fr)) !important;
       gap: 5px;
     }
 
-    .export-sheet.mobile-export .status-chip {
-      padding: 7px 8px;
+    .export-sheet.unified-export .status-line.compact-3 {
+      grid-template-columns: repeat(3, minmax(0,1fr)) !important;
     }
 
-    .export-sheet.mobile-export .status-chip .t1 {
+    .export-sheet.unified-export .status-chip {
+      min-height: 0;
+      padding: 7px 8px;
+      border-radius: 10px;
+    }
+
+    .export-sheet.unified-export .status-chip .t1 {
       font-size: 12px;
       margin-bottom: 3px;
     }
 
-    .export-sheet.mobile-export .status-chip .t2 {
-      font-size: 20px;
+    .export-sheet.unified-export .status-chip .t2 {
+      font-size: 18px;
       line-height: 1.18;
     }
 
-    .export-sheet.mobile-export .export-checks {
-      font-size: 17px;
-      gap: 5px;
+    .export-sheet.unified-export .export-checks {
+      grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+      gap: 5px 6px;
+      font-size: 16px;
     }
 
-    .export-sheet.mobile-export .export-checks div {
+    .export-sheet.unified-export .export-checks div {
       padding: 7px 8px;
       line-height: 1.22;
+      border-radius: 10px;
     }
 
-    .export-sheet.mobile-export .export-textarea {
-      font-size: 19px;
-      line-height: 1.38;
-      padding: 8px 10px;
+    .export-sheet.unified-export .export-textarea {
+      min-height: 0;
+      padding: 8px 9px;
+      font-size: 18px;
+      line-height: 1.34;
+      border-radius: 10px;
     }
 
-    .export-sheet.mobile-export .export-image-card {
+    .export-sheet.unified-export .export-image-stack {
+      gap: 6px;
+    }
+
+    .export-sheet.unified-export .export-image-card {
       padding: 6px;
+      border-radius: 10px;
     }
 
-    .export-sheet.mobile-export .export-image-label {
+    .export-sheet.unified-export .export-image-label {
       font-size: 13px;
       margin-bottom: 4px;
     }
 
-    .export-sheet.mobile-export .export-image {
-      border-radius: 9px;
-      max-height: 820px;
+    .export-sheet.unified-export .export-image {
+      border-radius: 8px;
+      max-height: 720px;
+      object-fit: contain;
     }
 
 
@@ -831,7 +861,7 @@
       .page-grid { grid-template-columns: 1fr; }
       .dual-card, .cols-2, .cols-3, .cols-4 { grid-template-columns: 1fr; }
       .header, .export-head { flex-direction: column; align-items: flex-start; }
-      .status-line, .kv-2, .kv-3, .export-checks { grid-template-columns: 1fr; }
+      .status-line, .kv-2, .kv-3 { grid-template-columns: 1fr; }
     }
 
     @media print {
@@ -1040,7 +1070,7 @@
               <label class="chip"><input type="checkbox" name="follow3" />③ 查看 Pending Issue，并考虑是否有关联性</label>
               <label class="chip"><input type="checkbox" name="follow4" />④ 收到 Log 后，通过 NetTool 检查设备故障</label>
               <label class="chip"><input type="checkbox" name="follow5" />⑤ 检查最近 PM / 过去案例 / 相关 S.News</label>
-              <label class="chip"><input type="checkbox" name="follow6" />⑥ 整理设备详情、故障内容、已做工作、后续对策</label>
+              <label class="chip"><input type="checkbox" name="follow6" />⑥ 整理设备详情、故障内容、已做工作及对策</label>
             </div>
             <div class="choice-row" style="margin-top:8px;">
               <label class="chip"><input type="checkbox" name="follow7" />⑦ 向上司汇报以上信息</label>
@@ -1219,8 +1249,7 @@
     }
 
     function buildExportHtml() {
-      const mobileExport = isMobileDevice();
-      exportSheet.className = `export-sheet wechat-card${mobileExport ? ' mobile-export' : ''}`;
+      exportSheet.className = 'export-sheet wechat-card unified-export';
       const imageBlock = uploadedImages.length
         ? `
           <div class="export-block full">
@@ -1303,7 +1332,7 @@
               <div>${esc(checkLine('follow3', '③ 查看 Pending Issue，并考虑是否有关联性'))}</div>
               <div>${esc(checkLine('follow4', '④ 收到 Log 后，通过 NetTool 检查设备故障'))}</div>
               <div>${esc(checkLine('follow5', '⑤ 检查最近 PM / 过去案例 / 相关 S.News'))}</div>
-              <div>${esc(checkLine('follow6', '⑥ 整理设备详情、故障内容、已做工作、后续对策'))}</div>
+              <div>${esc(checkLine('follow6', '⑥ 整理设备详情、故障内容、已做工作及对策'))}</div>
               <div>${esc(checkLine('follow7', '⑦ 向上司汇报以上信息'))}</div>
             </div>
           </div>
@@ -1358,7 +1387,7 @@
       wrapper.appendChild(styledNode);
       wrapper.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml');
 
-      const defaultWidth = isMobileDevice() ? 720 : 980;
+      const defaultWidth = 820;
       const width = Math.ceil(exportSheet.scrollWidth || exportSheet.offsetWidth || defaultWidth);
       const height = Math.ceil(exportSheet.scrollHeight || exportSheet.offsetHeight || 1754);
 
@@ -1408,7 +1437,7 @@
       }
       const canvas = await window.html2canvas(exportSheet, {
         backgroundColor: '#ffffff',
-        scale: isMobileDevice() ? 2.2 : 2,
+        scale: 2,
         useCORS: true,
         logging: false
       });
